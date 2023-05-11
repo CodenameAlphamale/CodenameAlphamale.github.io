@@ -57,17 +57,18 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/CodenameAlphamale.github.io.loader.js";
-      var config = {
-        dataUrl: buildUrl + "/CodenameAlphamale.github.io.data",
-        frameworkUrl: buildUrl + "/CodenameAlphamale.github.io.framework.js",
-        codeUrl: buildUrl + "/CodenameAlphamale.github.io.wasm",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
-        productName: "FaultWithCuriosity",
-        productVersion: "0.1",
-        showBanner: unityShowBanner,
-      };
+var loaderUrl = buildUrl + "/CodenameAlphamale.github.io.loader.js";
+var dataUrl = "https://github.com/CodenameAlphamale/CodenameAlphamale.github.io/blob/main/" + buildUrl + "/CodenameAlphamale.github.io.data?raw=true&lfs=1";
+var config = {
+  dataUrl: dataUrl,
+  frameworkUrl: buildUrl + "/CodenameAlphamale.github.io.framework.js",
+  codeUrl: buildUrl + "/CodenameAlphamale.github.io.wasm",
+  streamingAssetsUrl: "StreamingAssets",
+  companyName: "DefaultCompany",
+  productName: "FaultWithCuriosity",
+  productVersion: "0.1",
+  showBanner: unityShowBanner,
+};
 
       // By default Unity keeps WebGL canvas render target size matched with
       // the DOM size of the canvas element (scaled by window.devicePixelRatio)
