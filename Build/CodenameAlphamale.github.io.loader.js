@@ -119,11 +119,6 @@ function createUnityInstance(canvas, config, onProgress) {
   disabledCanvasEvents.forEach(function (disabledCanvasEvent) {
     canvas.addEventListener(disabledCanvasEvent, preventDefault);
   });
-  
-  canvas.addEventListener("click", async () => {
-    await canvas.requestPointerLock();
-  });
-
   window.addEventListener("error", errorListener);
   window.addEventListener("unhandledrejection", errorListener);
 
@@ -139,6 +134,9 @@ function createUnityInstance(canvas, config, onProgress) {
     var fullscreenElement = document.webkitCurrentFullScreenElement;
     if (fullscreenElement === canvas) {
       if (canvas.style.width) {
+        canvas.addEventListener("click", async () => {
+          await canvas.requestPointerLock();
+        });
         _savedElementWidth = canvas.style.width;
         _savedElementHeight = canvas.style.height;
         canvas.style.width = "100%";
