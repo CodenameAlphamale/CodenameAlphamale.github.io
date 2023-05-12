@@ -119,6 +119,10 @@ function createUnityInstance(canvas, config, onProgress) {
   disabledCanvasEvents.forEach(function (disabledCanvasEvent) {
     canvas.addEventListener(disabledCanvasEvent, preventDefault);
   });
+  
+  canvas.addEventListener("click", async () => {
+    await canvas.requestPointerLock();
+  });
 
   window.addEventListener("error", errorListener);
   window.addEventListener("unhandledrejection", errorListener);
